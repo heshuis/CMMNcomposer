@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Test" targetNamespace="http://bpmn.io/schema/cmmn" exporter="Camunda Modeler" exporterVersion="1.6.0">
+  <cmmn:case id="Case_1">
+    <cmmn:casePlanModel id="CasePlanModel_1" name="LoanApplication">
+      <cmmn:planItem id="PlanItem_1q57hub" definitionRef="Stage_12a8xuo">
+        <cmmn:entryCriterion id="EntryCriterion_0ygu68z" sentryRef="Sentry_0ytn81w" />
+      </cmmn:planItem>
+      <cmmn:sentry id="Sentry_0ytn81w">
+        <cmmn:ifPart id="IfPart_04b3e12">
+          <cmmn:condition id="Expression_18f0kz3">orig</cmmn:condition>
+        </cmmn:ifPart>
+      </cmmn:sentry>
+      <cmmn:stage id="Stage_12a8xuo" name="Perform online request">
+        <cmmn:planItem id="PlanItem_04035h7" definitionRef="Task_1e8c5p8">
+          <cmmn:entryCriterion id="EntryCriterion_136h3w8" sentryRef="Sentry_1hjgnqm" />
+          <cmmn:entryCriterion id="EntryCriterion_0cx7sut" sentryRef="Sentry_1bviso8" />
+        </cmmn:planItem>
+        <cmmn:planItem id="PlanItem_1slm5lp" definitionRef="Task_167fxat">
+          <cmmn:entryCriterion id="EntryCriterion_0c73prx" sentryRef="Sentry_1bhflzc" />
+        </cmmn:planItem>
+        <cmmn:planItem id="PlanItem_116aurd" definitionRef="Task_1yu6fj6">
+          <cmmn:entryCriterion id="EntryCriterion_07qqre8" sentryRef="Sentry_1opmil7" />
+        </cmmn:planItem>
+        <cmmn:planItem id="PlanItem_0i7dnk6" definitionRef="Task_1ryjcnq">
+          <cmmn:entryCriterion id="EntryCriterion_0w0dyh6" sentryRef="Sentry_1pgxbzb" />
+          <cmmn:entryCriterion id="EntryCriterion_0srf5uc" sentryRef="Sentry_0fbptiq" />
+        </cmmn:planItem>
+        <cmmn:planItem id="PlanItem_04n9eef" definitionRef="Milestone_1vssstz">
+          <cmmn:entryCriterion id="EntryCriterion_0opsog7" sentryRef="Sentry_1ohorj4" />
+          <cmmn:entryCriterion id="EntryCriterion_0n3ljft" sentryRef="Sentry_18d6klh" />
+        </cmmn:planItem>
+        <cmmn:planItem id="PlanItem_1gtoabf" definitionRef="Task_0lc71kk">
+          <cmmn:entryCriterion id="EntryCriterion_07thoki" sentryRef="Sentry_0gikmtk" />
+          <cmmn:entryCriterion id="EntryCriterion_1b2wwq7" sentryRef="Sentry_1awhpi6" />
+        </cmmn:planItem>
+        <cmmn:planItem id="PlanItem_01kva2o" definitionRef="Milestone_0uf1kbg">
+          <cmmn:entryCriterion id="EntryCriterion_1d93l3q" sentryRef="Sentry_0bhwsir" />
+          <cmmn:entryCriterion id="EntryCriterion_1957h68" sentryRef="Sentry_0zy2any" />
+        </cmmn:planItem>
+        <cmmn:sentry id="Sentry_1bhflzc">
+          <cmmn:ifPart id="IfPart_041y8wz">
+            <cmmn:condition id="Expression_1ajxw27">orig and need gt 28k</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_1opmil7">
+          <cmmn:ifPart id="IfPart_1phmxvy">
+            <cmmn:condition id="Expression_1yeovus">orig and need gt 28k</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_1hjgnqm">
+          <cmmn:ifPart id="IfPart_18rgrd0">
+            <cmmn:condition id="Expression_086lval">orig</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_1bviso8">
+          <cmmn:ifPart id="IfPart_1jlg2sr">
+            <cmmn:condition id="Expression_0biwidy">not starter and need lteq 28k</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_1pgxbzb">
+          <cmmn:ifPart id="IfPart_00gkpmq">
+            <cmmn:condition id="Expression_078t38o">orig and starter</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_0fbptiq">
+          <cmmn:ifPart id="IfPart_1sepiff">
+            <cmmn:condition id="Expression_0kdfz7v">orig and need gt 28k</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_1ohorj4">
+          <cmmn:ifPart id="IfPart_0owp6k7">
+            <cmmn:condition id="Expression_0q8r3cx">not starter and need lteq 28k</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_0gikmtk">
+          <cmmn:ifPart id="IfPart_00evvhk">
+            <cmmn:condition id="Expression_0jabiov">orig and starter</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_1awhpi6">
+          <cmmn:ifPart id="IfPart_0e3fsyb">
+            <cmmn:condition id="Expression_1h93daf">orig and need gt 28k</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_0bhwsir">
+          <cmmn:ifPart id="IfPart_1nds2ud">
+            <cmmn:condition id="Expression_1gtqo7d">orig</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_0zy2any">
+          <cmmn:ifPart id="IfPart_1qn7s0k">
+            <cmmn:condition id="Expression_1tk00fs">not starter and need lteq 28k</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:sentry id="Sentry_18d6klh">
+          <cmmn:ifPart id="IfPart_169owf4">
+            <cmmn:condition id="Expression_1k6lj88">orig</cmmn:condition>
+          </cmmn:ifPart>
+        </cmmn:sentry>
+        <cmmn:task id="Task_1e8c5p8" name="upload figures last  year" />
+        <cmmn:task id="Task_167fxat" name="upload figures last year -1" />
+        <cmmn:task id="Task_1yu6fj6" name="upload figures last year-2" />
+        <cmmn:task id="Task_1ryjcnq" name="fill in prognosis" />
+        <cmmn:milestone id="Milestone_1vssstz" name="prognosis provided" />
+        <cmmn:task id="Task_0lc71kk" name="upload documents" />
+        <cmmn:milestone id="Milestone_0uf1kbg" name="info provided" />
+      </cmmn:stage>
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram id="_5a66685b-5f57-4e2f-b1d1-acca4fae04b2" name="customer wants to give additional feedback">
+      <cmmndi:Size xsi:type="dc:Dimension" width="500" height="500" />
+      <cmmndi:CMMNShape id="DI_CasePlanModel_1" cmmnElementRef="CasePlanModel_1">
+        <dc:Bounds x="-955" y="1028" width="2647" height="1712" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1q57hub_di" cmmnElementRef="PlanItem_1q57hub">
+        <dc:Bounds x="-435" y="1076" width="1435" height="1198" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_04035h7_di" cmmnElementRef="PlanItem_04035h7">
+        <dc:Bounds x="531" y="1145" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1slm5lp_di" cmmnElementRef="PlanItem_1slm5lp">
+        <dc:Bounds x="531" y="1262" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_116aurd_di" cmmnElementRef="PlanItem_116aurd">
+        <dc:Bounds x="531" y="1389" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0i7dnk6_di" cmmnElementRef="PlanItem_0i7dnk6">
+        <dc:Bounds x="-314" y="1641" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_04n9eef_di" cmmnElementRef="PlanItem_04n9eef">
+        <dc:Bounds x="-149" y="1661" width="100" height="40" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1gtoabf_di" cmmnElementRef="PlanItem_1gtoabf">
+        <dc:Bounds x="218" y="1634" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_01kva2o_di" cmmnElementRef="PlanItem_01kva2o">
+        <dc:Bounds x="880" y="1654" width="100" height="40" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_0c73prx_di" cmmnElementRef="EntryCriterion_0c73prx">
+        <dc:Bounds x="520.5339233038349" y="1293" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_07qqre8_di" cmmnElementRef="EntryCriterion_07qqre8">
+        <dc:Bounds x="521" y="1425" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_136h3w8_di" cmmnElementRef="EntryCriterion_136h3w8">
+        <dc:Bounds x="521" y="1159.5858156028369" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_0cx7sut_di" cmmnElementRef="EntryCriterion_0cx7sut">
+        <dc:Bounds x="521" y="1211" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_0w0dyh6_di" cmmnElementRef="EntryCriterion_0w0dyh6">
+        <dc:Bounds x="-296.0744125326371" y="1627" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_0srf5uc_di" cmmnElementRef="EntryCriterion_0srf5uc">
+        <dc:Bounds x="-255.0744125326371" y="1627" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_0opsog7_di" cmmnElementRef="EntryCriterion_0opsog7">
+        <dc:Bounds x="-105.0744125326371" y="1647" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_07thoki_di" cmmnElementRef="EntryCriterion_07thoki">
+        <dc:Bounds x="232.47672778561343" y="1620" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_1b2wwq7_di" cmmnElementRef="EntryCriterion_1b2wwq7">
+        <dc:Bounds x="284.47672778561343" y="1620" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_1d93l3q_di" cmmnElementRef="EntryCriterion_1d93l3q">
+        <dc:Bounds x="909.4767277856134" y="1640" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_1957h68_di" cmmnElementRef="EntryCriterion_1957h68">
+        <dc:Bounds x="944.4767277856134" y="1640" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_0n3ljft_di" cmmnElementRef="EntryCriterion_0n3ljft">
+        <dc:Bounds x="-136.52327221438657" y="1647" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_0ygu68z_di" cmmnElementRef="EntryCriterion_0ygu68z">
+        <dc:Bounds x="-445" y="1571.7398119122258" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>

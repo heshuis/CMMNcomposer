@@ -4,4 +4,4 @@ CMMNcomposer requires the JDOM library: jdom-1.1.3.jar
 
 Usage: java -jar CMMNcomposer \<file\>, where file is a textfile that lists line by line the CMMN files to be composed. 
 
-CMMN files with \<name-Fx\> denote a feature that refines base CMMN file \<name\>.
+Folder examples contains features for three different business processes. CMMN files with \<name-Fx\> denote a feature that refines base CMMN file \<name\>.
